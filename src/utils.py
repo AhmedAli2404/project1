@@ -48,3 +48,12 @@ def evaluate_model(X_train, y_train, X_test, y_test,models):
         logging.info("error in evaluating model")
         raise Exception(e,sys)
     
+
+def load_pickel(filepath):
+    try :
+        with open(filepath,"rb") as file:
+            return pickle.load(file)
+    except Exception as e:
+        logging.info("tthere is an error in unserialising the pickle file")
+        raise CustomException(e,sys)
+    
